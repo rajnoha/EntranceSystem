@@ -14,12 +14,17 @@ import javafx.stage.Stage;
 public class App extends Application
 {
 	public void start(Stage stage) throws Exception {
-		Parent rootPane = FXMLLoader.load(
-				getClass().getResource("MainWindow.fxml"));
+		MainWindowController controller = new MainWindowController();
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
+		fxmlLoader.setController(controller);
+		Parent rootPane = fxmlLoader.load();
+		
+		//Parent rootPane = FXMLLoader.load(getClass().getResource("MainWindow.fxml"));
+				 
 		
 		//Button button = new Button("stlač ma!");
 		//button.setOnAction(new SysoutHandler());
-		//setOnAction potrebuje EventHandler, a tu je podany ako interface- anonymna trieda
+		//setOnAction potrebuje EventHandler, a tu je podany ako interface- anonymna trieda 
 		//button.setOnAction(new EventHandler<ActionEvent>() {
 			
 		//	@Override
