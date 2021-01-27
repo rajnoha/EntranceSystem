@@ -4,7 +4,7 @@ public class User {
 
 	private String meno;
 	private String chipId;
-	public boolean isActive;
+	public boolean isActive = true;
 	
 	public String getMeno() {
 		return meno;
